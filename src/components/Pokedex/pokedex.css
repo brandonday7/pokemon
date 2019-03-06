@@ -1,7 +1,5 @@
 .pokedex {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 }
 
@@ -10,6 +8,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin: 2em;
 }
 
 .pokedex__member__image {
@@ -21,4 +20,9 @@
 	font-size: 150%;
 	color: white;
 	margin: 0;
+}
+
+.pokedex__empty {
+	font-size: 250%;
+	color: white;
 }
