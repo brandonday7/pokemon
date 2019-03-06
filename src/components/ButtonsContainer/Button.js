@@ -1,10 +1,10 @@
 import React from "react"
 import "./buttons.css"
 
-const Button = ({ label, ball = false, loading, viewPokemon }) => (
+const Button = ({ label, ball = false, loading, onClick }) => (
   <div 
     className="btn btn--white" 
-    onClick={() => {if (!loading) viewPokemon()}}
+    onClick={() => {if (!loading) onClick()}}
   >
   	{label}
     {ball && <img 

@@ -1,10 +1,12 @@
 import { handleActions } from 'redux-actions';
 
 const initialState = {
+	view: "explore",
 	pokemon: []
 }
 
 const ADD_POKEMON = "ADD_POKEMON"
+const VIEW_POKEDEX = "VIEW_POKEDEX"
 // const REMOVE_POKEMON = "REMOVE_POKEMON"
 
 
@@ -12,6 +14,10 @@ const ADD_POKEMON = "ADD_POKEMON"
 export const addPokemon = newPokemon => ({
 	type: "ADD_POKEMON",
 	newPokemon
+})
+
+export const viewPokedex = () => ({
+	type: "VIEW_POKEDEX"
 })
 
 
@@ -28,6 +34,13 @@ export default handleActions(
       	}
       ]
     }),
+    [VIEW_POKEDEX]: (state) => ({
+    	...state,
+    	view: "pokedex"
+    }),
+
+
+
   },
   initialState
 );

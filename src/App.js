@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Pokemon from "./components/Pokemon"
-import ButtonsContainer from "./components/ButtonsContainer"
+import Pokedex from "./components/Pokedex"
+import ButtonsContainer from "./containers/ButtonsContainer"
 import { getPokemon } from "./utilities.js"
 import './App.css';
 
@@ -24,10 +25,16 @@ class App extends Component {
 
   render() {
     const { pokemon, loading } = this.state
+    const { pokedex } = this.props
     return (
       <div className="container">
-        {pokemon && <Pokemon pokemon={pokemon} />}
-        <ButtonsContainer loading={loading} viewPokemon={this.viewPokemon}/>
+      {pokedex.view === "explore" ? 
+        <Fragment>
+          {pokemon && <Pokemon pokemon={pokemon} />}
+          <ButtonsContainer loading={loading} viewPokemon={this.viewPokemon}/>
+        </Fragment> : 
+        <Pokedex pokedex={pokedex}/>
+      }
       </div>
     );
   }

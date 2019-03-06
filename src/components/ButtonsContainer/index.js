@@ -1,17 +1,12 @@
-import React, { Component } from "react"
+import React from "react"
 import Button from "./Button"
 import "./buttons.css"
 
-class ButtonsContainer extends Component {
-	render() {
-		const { loading, viewPokemon } = this.props
-		return (
-			<div className="corner">
-				<Button ball={true} label="Pokedex"/>
-				<Button ball={true} loading={loading} label="Find Pokemon" viewPokemon={viewPokemon}/>
-			</div>
-		)
-	}
-}
+const ButtonsContainer = ({ loading, viewPokemon, viewPokedex, pokedex }) => (
+	<div className="corner">
+		<Button ball={true} label={`Pokédex (${pokedex.pokemon.length})`} onClick={viewPokedex} />
+		<Button ball={true} loading={loading} label="Find Pokémon" onClick={viewPokemon}/>
+	</div>
+)
 
 export default ButtonsContainer
