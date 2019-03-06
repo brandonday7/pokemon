@@ -1,5 +1,5 @@
 import React from "react"
-import "./App.css"
+import "./buttons.css"
 
 const Button = ({ label, ball = false, loading, viewPokemon }) => (
   <div 

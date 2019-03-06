@@ -1,0 +1,43 @@
+.pokemon {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+.pokemon__details {
+	display: flex;
+	flex-direction: column;
+}
+
+.pokemon__details__name {
+	color: white;
+	margin: 0.3em;
+}
+
+.pokemon__sprite {
+	max-width: 100px;
+	height: auto;
+}
+
+.pokeball {
+	margin: 0 3em;
+	cursor: pointer;
+	/*animation: swell 1.5s infinite;*/
+	/*position: fixed;*/
+	/*transform: translateX(30vw);*/
+}
+
+@keyframes swell {
+	0% {
+		width: 50px;
+	}
+
+	50% {
+		width: 60px;
+	}
+
+	100% {
+		width: 50px;
+	}
+}

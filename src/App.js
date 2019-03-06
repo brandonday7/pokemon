@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Pokemon from "./Pokemon"
-import Capture from "./Capture"
-import ButtonsContainer from "./ButtonsContainer"
+import Pokemon from "./components/Pokemon"
+import ButtonsContainer from "./components/ButtonsContainer"
 import { getPokemon } from "./utilities.js"
 import './App.css';
 
@@ -28,8 +27,7 @@ class App extends Component {
     return (
       <div className="container">
         {pokemon && <Pokemon pokemon={pokemon} />}
-        {pokemon && <Capture pokemon={pokemon} />}
-        <ButtonsContainer pokemon={pokemon} loading={loading} viewPokemon={this.viewPokemon}/>
+        <ButtonsContainer loading={loading} viewPokemon={this.viewPokemon}/>
       </div>
     );
   }
