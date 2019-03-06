@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import Pokemon from "./components/Pokemon"
 import Pokedex from "./components/Pokedex"
 import ButtonsContainer from "./containers/ButtonsContainer"
@@ -29,12 +29,10 @@ class App extends Component {
     return (
       <div className="container">
       {pokedex.view === "explore" ? 
-        <Fragment>
-          {pokemon && <Pokemon pokemon={pokemon} />}
-          <ButtonsContainer loading={loading} viewPokemon={this.viewPokemon}/>
-        </Fragment> : 
+        <Pokemon pokemon={pokemon} /> :
         <Pokedex pokedex={pokedex}/>
       }
+        <ButtonsContainer loading={loading} viewPokemon={this.viewPokemon} />
       </div>
     );
   }

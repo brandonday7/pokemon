@@ -7,6 +7,7 @@ const initialState = {
 
 const ADD_POKEMON = "ADD_POKEMON"
 const VIEW_POKEDEX = "VIEW_POKEDEX"
+const VIEW_EXPLORE = "VIEW_EXPLORE"
 // const REMOVE_POKEMON = "REMOVE_POKEMON"
 
 
@@ -18,6 +19,10 @@ export const addPokemon = newPokemon => ({
 
 export const viewPokedex = () => ({
 	type: "VIEW_POKEDEX"
+})
+
+export const viewExplore = () => ({
+	type: "VIEW_EXPLORE"
 })
 
 
@@ -38,9 +43,10 @@ export default handleActions(
     	...state,
     	view: "pokedex"
     }),
-
-
-
+    [VIEW_EXPLORE]: (state) => ({
+    	...state,
+    	view: "explore"
+    }),
   },
   initialState
 );
