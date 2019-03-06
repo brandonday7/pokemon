@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Pokemon from "./Pokemon"
+import Capture from "./Capture"
+import ButtonsContainer from "./ButtonsContainer"
 import { getPokemon } from "./utilities.js"
 import './App.css';
 
@@ -25,18 +27,9 @@ class App extends Component {
     const { pokemon, loading } = this.state
     return (
       <div className="container">
-        <div 
-          className="btn btn--white btn--corner" 
-          onClick={() => {if (!loading) this.viewPokemon()}}
-        >Find Pokemon
-          <img 
-            src="https://i.pinimg.com/originals/15/61/dc/1561dcb8a19ad8e6d4417b29f8c38161.jpg"
-            className={`btn__img ${loading && "spin"}`}
-            alt="pokeball"
-            width="20"
-          />
-        </div>
-        {pokemon && <Pokemon pokemon={pokemon}/>}
+        {pokemon && <Pokemon pokemon={pokemon} />}
+        {pokemon && <Capture pokemon={pokemon} />}
+        <ButtonsContainer pokemon={pokemon} loading={loading} viewPokemon={this.viewPokemon}/>
       </div>
     );
   }
