@@ -26,9 +26,9 @@ class App extends Component {
     return (
       <div className="container">
         <div 
-          className="btn btn--white" 
+          className="btn btn--white btn--corner" 
           onClick={() => {if (!loading) this.viewPokemon()}}
-        >Random Pokemon
+        >Find Pokemon
           <img 
             src="https://i.pinimg.com/originals/15/61/dc/1561dcb8a19ad8e6d4417b29f8c38161.jpg"
             className={`btn__img ${loading && "spin"}`}

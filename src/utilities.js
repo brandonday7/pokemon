@@ -9,6 +9,10 @@ const getPokemon = () => (
   .catch(e => console.log(e))
 )
 
+const concatMoves = moves => {
+	let moveString = ""
+	moves.forEach(move => moveString += capitalize(move.move.name) + ", ")
+	return moveString.slice(0, -2)
+}
 
-
-export { getPokemon, capitalize } 
+export { getPokemon, capitalize, concatMoves } 
