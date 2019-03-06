@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div className="container">
       {pokedex.view === "explore" ? 
-        <Pokemon pokemon={pokemon} /> :
+        <Pokemon pokemon={pokemon} pokedex={pokedex} /> :
         <Pokedex pokedex={pokedex}/>
       }
         <ButtonsContainer loading={loading} viewPokemon={this.viewPokemon} />

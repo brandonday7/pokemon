@@ -15,4 +15,9 @@ const concatMoves = moves => {
 	return moveString.slice(0, -2)
 }
 
-export { getPokemon, capitalize, concatMoves } 
+const unknownPokemon = (pokemon, pokedex) => {
+	if (pokedex.pokemon.map(p => p.name).includes(pokemon.name)) return false
+	return true
+}
+
+export { getPokemon, capitalize, concatMoves, unknownPokemon } 
