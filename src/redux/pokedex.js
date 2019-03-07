@@ -37,7 +37,7 @@ export const viewExplore = () => ({
 export default handleActions(
   {
     [ADD_POKEMON]: (state, { newPokemon }) => {
-    	if (state.pokemon.length < 2) {
+    	if (state.pokemon.length < 6) {
 	    	return {
 		    	...state,
 		      pokemon: [
