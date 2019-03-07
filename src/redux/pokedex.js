@@ -8,13 +8,18 @@ const initialState = {
 const ADD_POKEMON = "ADD_POKEMON"
 const VIEW_POKEDEX = "VIEW_POKEDEX"
 const VIEW_EXPLORE = "VIEW_EXPLORE"
-// const REMOVE_POKEMON = "REMOVE_POKEMON"
+const REMOVE_POKEMON = "REMOVE_POKEMON"
 
 
 // ACTIONS
 export const addPokemon = newPokemon => ({
 	type: "ADD_POKEMON",
 	newPokemon
+})
+
+export const removePokemon = index => ({
+	type: "REMOVE_POKEMON",
+	index
 })
 
 export const viewPokedex = () => ({
@@ -39,6 +44,14 @@ export default handleActions(
       	}
       ]
     }),
+    [REMOVE_POKEMON]: (state, { index }) => {
+    	const copy = state.pokemon
+    	copy.splice(index, 1)
+    	return {
+    		...state,
+      	pokemon: copy
+    	}
+    },
     [VIEW_POKEDEX]: (state) => ({
     	...state,
     	view: "pokedex"

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Pokemon from "./components/Pokemon"
-import Pokedex from "./components/Pokedex"
+import Pokedex from "./containers/Pokedex"
 import ButtonsContainer from "./containers/ButtonsContainer"
 import { getPokemon } from "./utilities.js"
 import './App.css';
