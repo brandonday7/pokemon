@@ -17,6 +17,8 @@ Click the Pokédex button to view the Pokémon you have captured (changes Redux 
 
 <img src="https://raw.github.com/brandonday7/pokemon/master/src/images/pokedex.png" alt="examples" width="800"/>
 
+Click any Pokémon in your Pokédex to remove them
+
 Click the Back button to continue looking for Pokémon
 
 #### Setup:
