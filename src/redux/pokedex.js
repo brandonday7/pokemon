@@ -1,7 +1,9 @@
 import { handleActions } from 'redux-actions';
+import { capitalize } from "../utilities.js"
 
 const initialState = {
 	view: "explore",
+	error: null,
 	pokemon: []
 }
 
@@ -34,21 +36,31 @@ export const viewExplore = () => ({
 // REDUCERS
 export default handleActions(
   {
-    [ADD_POKEMON]: (state, { newPokemon }) => ({
-    	...state,
-      pokemon: [
-      	...state.pokemon, 
-      	{
-      		name: newPokemon.name,
-      		sprite: newPokemon.sprites.front_default 
-      	}
-      ]
-    }),
+    [ADD_POKEMON]: (state, { newPokemon }) => {
+    	if (state.pokemon.length < 2) {
+	    	return {
+		    	...state,
+		      pokemon: [
+		      	...state.pokemon, 
+		      	{
+		      		name: capitalize(newPokemon.name),
+		      		sprite: newPokemon.sprites.front_default 
+		      	}
+		      ]
+		    }
+    	} else {
+    		return {
+    			...state,
+    			error: `Your Pokédex is full!\n Remove one to make room for ${capitalize(newPokemon.name)}`
+    		}
+    	}
+	  },
     [REMOVE_POKEMON]: (state, { index }) => {
     	const copy = state.pokemon
     	copy.splice(index, 1)
     	return {
     		...state,
+    		error: null,
       	pokemon: copy
     	}
     },

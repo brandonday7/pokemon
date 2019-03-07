@@ -16,7 +16,7 @@ const concatMoves = moves => {
 }
 
 const unknownPokemon = (pokemon, pokedex) => {
-	if (pokedex.pokemon.map(p => p.name).includes(pokemon.name)) return false
+	if (pokedex.pokemon.map(p => p.name).includes(capitalize(pokemon.name))) return false
 	return true
 }
 

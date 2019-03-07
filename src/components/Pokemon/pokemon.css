@@ -21,6 +21,13 @@
 	height: auto;
 }
 
+.capture__error {
+	color: #ffb6c1;
+	max-width: 15em;
+	margin-left: 1.5em;
+	font-size: 120%;
+}
+
 .pokeball {
 	margin: 0 3em;
 	cursor: pointer;
