@@ -17,12 +17,12 @@
 }
 
 .pokedex__member__name {
-	font-size: 150%;
+	font-size: 200%;
 	color: white;
 	margin: 0;
 }
 
 .pokedex__empty {
-	font-size: 250%;
+	font-size: 300%;
 	color: white;
 }
